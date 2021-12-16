@@ -32,8 +32,9 @@ export default function App() {
   const getUsers = () => {
     axios.get()
       .then(resp => {
+        console.log(resp);
         setUsers(resp.data);
-      }).catch(err => console.error(err))
+      }).catch(error => console.log(error))
   }
 
   const postNewUser = newUser => {
@@ -83,15 +84,15 @@ export default function App() {
   return (
     <div className='container'>
       <header>
-          <h1>User App</h1>
+          <h1>User Onboarding App</h1>
       </header>
 
       <UserForm
         values={formValues}
         change={inputChange}
-        submit={formSubmit}
         disabled={disabled}
         errors={formErrors}
+        submit={formSubmit}
       />
 
       {

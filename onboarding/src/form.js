@@ -24,7 +24,7 @@ export default function userForm(props) {
     return (
     <form onSubmit={onSubmit}>
       <div>
-        <button disabled={disabled}>submit</button>
+        
 
         <div>
           <div>{errors.username}</div>
@@ -35,6 +35,7 @@ export default function userForm(props) {
       </div>
 
       <div>
+        <div className='UsernameIP'>
         <label>Username
           <input
             value={values.username}
@@ -43,6 +44,10 @@ export default function userForm(props) {
             type='text'
           />
         </label>
+        </div>
+
+
+        <div className='PasswordIP'>
         <label>Password
           <input
             value={values.password}
@@ -51,8 +56,10 @@ export default function userForm(props) {
             type='password'
           />
         </label>
+        </div>
 
-        <label>Email
+       <div className='EmailIP'>
+       <label>Email
           <input
             value={values.email}
             onChange={onChange}
@@ -60,13 +67,11 @@ export default function userForm(props) {
             type='text'
           />
         </label>
+       </div>
 
       </div>
 
       <div className='form-group checkboxes'>
-
-
-
         <label>Terms of Service
           <input
             type='checkbox'
@@ -74,7 +79,11 @@ export default function userForm(props) {
             checked={values.tos}
             onChange={onChange}
           />
-        </label>
+        </label>       
+
+      </div>
+      <div className='Buttons'>
+      <button id='submitBtn' disabled={disabled}>Submit User</button>
       </div>
     </form>
   )
